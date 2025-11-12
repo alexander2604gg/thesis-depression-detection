@@ -13,10 +13,11 @@ public class CorsConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**")
-                        .allowedOrigins("*") // o "*"
+                registry.addMapping("/**")  // Aplica a todos los endpoints
+                        .allowedOrigins("http://<EC2_PUBLIC_IP_FRONTEND>") // Cambia por la IP pública o dominio de tu frontend
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                        .allowedHeaders("*");
+                        .allowedHeaders("*")
+                        .allowCredentials(true);  // Si Angular usa withCredentials
             }
         };
     }
