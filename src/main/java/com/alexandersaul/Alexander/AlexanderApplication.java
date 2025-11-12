@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableFeignClients
-@EnableScheduling
+//@EnableScheduling
 @EnableAsync
 public class AlexanderApplication {
 
